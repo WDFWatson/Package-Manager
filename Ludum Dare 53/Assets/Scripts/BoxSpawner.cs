@@ -31,6 +31,7 @@ public class BoxSpawner : MonoBehaviour
     public void Spawn()
     {
         Box newBox = Instantiate(boxPrefab, transform.position, quaternion.identity);
+        newBox.rb.bodyType = RigidbodyType2D.Static;
         var spawnPositions = newBox.GetSpawnPositions(rows, columns);
         foreach (var position in spawnPositions)
         {
@@ -40,5 +41,6 @@ public class BoxSpawner : MonoBehaviour
             newBox.contents.Add(newItemID);
             Instantiate(im.items[newItemID],position,Quaternion.identity);
         }
+        newBox.rb.bodyType = RigidbodyType2D.Dynamic;
     }
 }

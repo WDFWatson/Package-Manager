@@ -7,8 +7,9 @@ public class Clock : MonoBehaviour
 {
     public bool clockMode = true;
 
-    public float timeInterval = 5f;
-    public float increaseRate = 0.9f;
+    public float timeInterval = 7f;
+    public float minTimeInterval = 1.5f;
+    public float increaseRate = 0.1f;
     public int increaseInterval = 10;
     public int changeItemsInterval = 5;
     
@@ -40,7 +41,7 @@ public class Clock : MonoBehaviour
             
             if (pulsesSinceLastIncrease >= increaseInterval)
             {
-                timeInterval *= increaseRate;
+                timeInterval = Mathf.Max(timeInterval *= increaseRate, minTimeInterval);
                 pulsesSinceLastIncrease = 0;
             }
         }

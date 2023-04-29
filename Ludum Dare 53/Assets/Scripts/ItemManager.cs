@@ -45,6 +45,11 @@ public class ItemManager : MonoBehaviour
         itemList = items.Keys.ToList();
     }
 
+    private void Start()
+    {
+        SetIllegalItems();
+    }
+
     public void SetIllegalItems()
     {
 
