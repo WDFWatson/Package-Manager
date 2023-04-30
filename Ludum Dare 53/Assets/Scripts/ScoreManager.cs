@@ -55,12 +55,14 @@ public class ScoreManager : MonoBehaviour
 
     void Correct()
     {
+        EffectManager.instance.Correct();
         score++;
         scoreDisplay.UpdateScore(score);
     }
 
     void Incorrect()
     {
+        EffectManager.instance.Incorrect();
         if (errors >= 3)
         {
             LoadManager.instance.LoadGameOver();

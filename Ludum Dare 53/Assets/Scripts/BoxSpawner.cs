@@ -32,6 +32,7 @@ public class BoxSpawner : MonoBehaviour
 
     public void Spawn()
     {
+        EffectManager.instance.Spawn();
         activeBoxes++;
         if (activeBoxes > activeBoxLimit)
         {

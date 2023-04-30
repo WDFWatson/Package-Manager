@@ -41,12 +41,14 @@ public class Box : MonoBehaviour
         
         if (inBoundsX && inBoundsY && Input.GetButtonDown("Fire1"))
         {
+            EffectManager.instance.PickUp();
             isGrabbed = true;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
 
         if (isGrabbed && Input.GetButtonUp("Fire1"))
         {
+            EffectManager.instance.Drop();
             isGrabbed = false;
             rb.constraints = RigidbodyConstraints2D.None;
             rb.angularVelocity = 0;
