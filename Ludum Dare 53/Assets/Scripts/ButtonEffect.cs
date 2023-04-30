@@ -13,4 +13,9 @@ public class ButtonEffect : MonoBehaviour
     {
         LoadManager.instance.LoadMenu();
     }
+
+    public void Guide()
+    {
+        LoadManager.instance.LoadGuide();
+    }
 }

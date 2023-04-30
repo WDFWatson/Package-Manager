@@ -41,4 +41,9 @@ public class LoadManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void LoadGuide()
+    {
+        SceneManager.LoadScene(3);
+    }
 }
