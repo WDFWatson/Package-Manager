@@ -14,6 +14,8 @@ public class BoxSpawner : MonoBehaviour
     public int rows;
 
     public int columns;
+    public int activeBoxLimit = 5;
+    public int activeBoxes;
 
     private void Awake()
     {
@@ -30,6 +32,11 @@ public class BoxSpawner : MonoBehaviour
 
     public void Spawn()
     {
+        activeBoxes++;
+        if (activeBoxes > activeBoxLimit)
+        {
+            LoadManager.instance.LoadGameOver();
+        }
         Box newBox = Instantiate(boxPrefab, transform.position, quaternion.identity);
         newBox.rb.bodyType = RigidbodyType2D.Static;
         var spawnPositions = newBox.GetSpawnPositions(rows, columns);

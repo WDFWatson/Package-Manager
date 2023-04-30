@@ -9,10 +9,9 @@ public class IconRenderer : MonoBehaviour
     public Image icon;
     private List<Image> currentIcons = new List<Image>();
 
-    public void Start()
+    public void Awake()
     {
         ItemManager.instance.setIllegalEvent += RenderIcons;
-
     }
 
     public void RenderIcons()
