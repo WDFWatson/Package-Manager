@@ -55,7 +55,7 @@ public class ItemManager : MonoBehaviour
 
         illegalItems.Clear();
         legalItems = new List<int>(itemList);
-        int numIllegalItems = Random.Range(minIllegalItems, maxIllegalItems);
+        int numIllegalItems = Random.Range(minIllegalItems, maxIllegalItems+1);
         for (int i = 0; i < numIllegalItems; i++)
         {
             int index = Random.Range(0, legalItems.Count);
